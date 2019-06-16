@@ -1,16 +1,15 @@
 const path = require('path')
-const fs = require('fs')
 
 module.exports = {
     entry: {
         index: './src/index.js',
-        store: './src/store.js'
+        store: './src/store.js',
     },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'release'),
         libraryTarget: 'amd',
-        library: 'coreUI'
+        library: 'coreUI',
     },
     module: {
         rules: [
@@ -26,11 +25,11 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             publicPath: '/microportal/',
-                        }
-                    }
-                ]
-            }
+                        },
+                    },
+                ],
+            },
         ],
     },
-    devtool: 'eval-source-map'
+    devtool: 'eval-source-map',
 }

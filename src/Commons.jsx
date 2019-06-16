@@ -1,35 +1,34 @@
 import React from 'react'
-import {connect} from 'react-redux';
-import {HashRouter, Link} from 'react-router-dom';
+import {connect} from 'react-redux'
+import {HashRouter, Link} from 'react-router-dom'
 
-import Routes from './main/Routes.jsx';
+import Routes from './main/Routes.jsx'
 
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import StarIcon from '@material-ui/icons/Star';
-import classNames from 'classnames';
-import {withStyles} from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import Badge from '@material-ui/core/Badge';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import ListItem from '@material-ui/core/ListItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItemText from '@material-ui/core/ListItemText'
+import InboxIcon from '@material-ui/icons/MoveToInbox'
+import StarIcon from '@material-ui/icons/Star'
+import classNames from 'classnames'
+import {withStyles} from '@material-ui/core/styles'
+import Drawer from '@material-ui/core/Drawer'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import List from '@material-ui/core/List'
+import Typography from '@material-ui/core/Typography'
+import Divider from '@material-ui/core/Divider'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import Badge from '@material-ui/core/Badge'
+import NotificationsIcon from '@material-ui/icons/Notifications'
 
-const drawerWidth = 240;
+const drawerWidth = 240
 
 const styles = theme => ({
     root: {
         flexGrow: 1,
-        // height: '100%',
         zIndex: 1,
         overflow: 'hidden',
         position: 'relative',
@@ -97,27 +96,27 @@ const styles = theme => ({
         [theme.breakpoints.up('md')]: {
             display: 'flex',
         },
-    }
-});
+    },
+})
 
 class Commons extends React.Component {
 
     handleDrawerOpen = () => {
-        console.log('open menu');
-        this.props.globalEventDistributor.dispatch({type: 'MENU_OPEN'});
-    };
+        console.log('open menu')
+        this.props.globalEventDistributor.dispatch({type: 'MENU_OPEN'})
+    }
 
     handleDrawerClose = () => {
-        console.log('close menu');
-        this.props.globalEventDistributor.dispatch({type: 'MENU_CLOSE'});
-    };
+        console.log('close menu')
+        this.props.globalEventDistributor.dispatch({type: 'MENU_CLOSE'})
+    }
 
     componentDidCatch(error, info) {
-        console.log(error, info);
+        console.log(error, info)
     }
 
     render() {
-        const {classes, theme} = this.props;
+        const {classes, theme} = this.props
 
         return (
             <HashRouter>
@@ -185,15 +184,15 @@ class Commons extends React.Component {
                     </main>
                 </div>
             </HashRouter>
-        );
+        )
     }
 }
 
 function mapStateToProps(state) {
     return {
         menuOpen: state.menuOpen,
-        alerts: state.alerts
-    };
+        alerts: state.alerts,
+    }
 }
 
-export default withStyles(styles, {withTheme: true})(connect(mapStateToProps, null)(Commons));
+export default withStyles(styles, {withTheme: true})(connect(mapStateToProps, null)(Commons))
