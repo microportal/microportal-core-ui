@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
-import Root from './root.component.jsx'
+import {RootCoreComponent} from './root.component.jsx'
 
 const topBar = singleSpaReact({
     React,
     ReactDOM,
-    rootComponent: Root,
+    rootComponent: RootCoreComponent,
     domElementGetter,
 })
 

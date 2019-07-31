@@ -3,7 +3,7 @@ import {Provider} from 'react-redux'
 
 import Commons from './Commons.jsx'
 
-export default class PersistentDrawer extends React.Component {
+class RootCoreComponent extends React.Component {
 
     state = {
         store: this.props.store,
@@ -22,3 +22,5 @@ export default class PersistentDrawer extends React.Component {
         )
     }
 }
+
+export {RootCoreComponent}

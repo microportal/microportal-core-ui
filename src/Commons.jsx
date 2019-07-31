@@ -158,22 +158,7 @@ class Commons extends React.Component {
                             </IconButton>
                         </div>
                         <Divider/>
-                        <List>
-                            <div>
-                                <ListItem component={Link} button to={'/dashboard'}>
-                                    <ListItemIcon>
-                                        <InboxIcon/>
-                                    </ListItemIcon>
-                                    <ListItemText primary="Dashboard"/>
-                                </ListItem>
-                                <ListItem component={Link} button to={'/services'}>
-                                    <ListItemIcon>
-                                        <StarIcon/>
-                                    </ListItemIcon>
-                                    <ListItemText primary="Services"/>
-                                </ListItem>
-                            </div>
-                        </List>
+                        <div id={'menu-ui'}>Loading menu</div>
                         <Divider/>
                     </Drawer>
 
